@@ -33,34 +33,45 @@
       <h1>Fale conosco</h1>
       <p>Preencha o formulário abaixo e nossa equipe entrará em contato.</p>
 
-      <form class="formulario-contato" onsubmit="return false">
-        <label for="nome">Nome</label>
-        <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+      <!-- layout em duas colunas: imagem do carro à esquerda, formulário à direita -->
+      <div class="contato-colunas">
+        <!-- imagem "flutuando", sem moldura/sombra/fundo ao redor.
+             Não existe versão em PNG transparente do XLS em img/ (só o
+             mesmo .jpg com fundo de estúdio usado no card da Lançamento),
+             então o fundo da foto não sai só com CSS - removemos aqui
+             apenas a borda/sombra/card ao redor, deixando o mais "solto"
+             possível dentro do que dá pra fazer sem editar a imagem. -->
+        <div class="contato-imagem-coluna">
+          <img src="anexo_desafio_htmlcss/img/xls 2.2 diesel.jpg" alt="Ford Ranger XLS 2.2 Diesel 4X4 AT 2022" class="contato-imagem-carro">
+        </div>
 
-        <label for="email">E-mail</label>
-        <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+        <div class="contato-form-coluna">
+          <h2>Sobre Você</h2>
 
-        <label for="telefone">Telefone</label>
-        <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000">
+          <form class="formulario-contato" onsubmit="return false">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
 
-        <fieldset class="tipo-contato">
-          <legend>Tipo de contato</legend>
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
 
-          <input type="radio" id="elogio" name="tipo" value="elogio">
-          <label for="elogio">Elogio</label>
+            <label for="telefone">Telefone</label>
+            <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000">
 
-          <input type="radio" id="reclamacao" name="tipo" value="reclamacao">
-          <label for="reclamacao">Reclamação</label>
+            <label for="tipo">Tipo de contato</label>
+            <select id="tipo" name="tipo">
+              <option value="elogio">Elogio</option>
+              <option value="reclamacao">Reclamação</option>
+              <option value="solicitacao">Solicitação</option>
+            </select>
 
-          <input type="radio" id="solicitacao" name="tipo" value="solicitacao">
-          <label for="solicitacao">Solicitação</label>
-        </fieldset>
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem"></textarea>
 
-        <label for="mensagem">Mensagem</label>
-        <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem"></textarea>
-
-        <button type="submit" class="btn-enviar">Enviar</button>
-      </form>
+            <button type="submit" class="btn-enviar">Enviar</button>
+          </form>
+        </div>
+      </div>
     </section>
   </main>
 

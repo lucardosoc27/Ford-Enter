@@ -14,6 +14,9 @@ body {
   font-family: 'Poppins', sans-serif;
   font-size: 1rem;
   color: #222;
+  /* fundo geral bem sutil (cinza-azulado), só pra dar unidade visual com o
+     azul do header/footer - o header continua branco puro, isso não mexe nele */
+  background-color: #F4F6FA;
   /* flexbox em coluna: header, main e footer empilhados.
      Isso é o que garante o rodapé sempre na base da página. */
   display: flex;
@@ -105,8 +108,8 @@ ul {
 /* container que segura imagem e texto juntos, com a mesma largura,
    pra imagem e texto crescerem/ficarem centralizados sempre em conjunto */
 .destaque-conteudo {
-  width: 75%; /* imagem bem grande, ocupando boa parte da página */
-  max-width: 1200px;
+  width: 85%; /* imagem bem grande, ocupando boa parte da página */
+  max-width: 1400px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -131,6 +134,9 @@ ul {
 .imagem-produto {
   /* ocupa 100% do container .destaque-conteudo, que é quem controla a largura */
   width: 100%;
+  /* altura automática: a imagem escala mantendo a proporção original do
+     arquivo, sem esticar nem cortar */
+  height: auto;
   border-radius: 8px;
   display: block;
   outline: none;
@@ -298,7 +304,7 @@ ul {
 
 .secao-contato {
   padding: 2rem;
-  max-width: 600px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
@@ -310,6 +316,34 @@ ul {
 
 .secao-contato > p {
   margin-bottom: 1.5rem;
+}
+
+/* duas colunas: imagem do carro à esquerda, formulário à direita */
+.contato-colunas {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+}
+
+.contato-imagem-coluna {
+  flex: 1;
+}
+
+/* imagem "flutuando": sem borda, sem sombra, sem fundo/card ao redor */
+.contato-imagem-carro {
+  width: 100%;
+  display: block;
+}
+
+.contato-form-coluna {
+  flex: 1;
+}
+
+/* heading "Sobre Você": menor que o h1 da página, maior que os labels */
+.contato-form-coluna h2 {
+  color: #1b357e;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
 }
 
 .formulario-contato {
@@ -325,39 +359,22 @@ ul {
 }
 
 .formulario-contato input,
+.formulario-contato select,
 .formulario-contato textarea {
   padding: 0.6rem;
   border: 1px solid #ccc;
   border-radius: 4px;
   font-family: inherit;
   font-size: 1rem;
+  background-color: #fff;
 }
 
 /* pseudoclasse focus nos campos do formulário */
 .formulario-contato input:focus,
+.formulario-contato select:focus,
 .formulario-contato textarea:focus {
   outline: none;
   border-color: #1351d8;
-}
-
-.tipo-contato {
-  margin-top: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  padding: 1rem;
-}
-
-.tipo-contato legend {
-  color: #1b357e;
-  font-weight: 600;
-  padding: 0 0.3rem;
-}
-
-.tipo-contato label {
-  margin: 0 0.5rem 0 0.2rem;
-  font-weight: 400;
-  display: inline;
-  color: #222;
 }
 
 .btn-enviar {
@@ -513,5 +530,11 @@ ul {
   .card-carro {
     width: 92%;
     max-width: 320px;
+  }
+
+  /* em telas pequenas, as duas colunas do Contato empilham: imagem em cima, formulário embaixo */
+  .contato-colunas {
+    flex-direction: column;
+    gap: 1.5rem;
   }
 }

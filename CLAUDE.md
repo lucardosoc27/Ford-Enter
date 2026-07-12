@@ -54,7 +54,7 @@ Luã é estudante iniciante (curso técnico, ainda aprendendo). O código deve r
 Layout confirmado e validado visualmente por Luã — seguir à risca, sem inventar variações:
 
 - **Header:** fundo **branco** (não azul) — isso evita o contraste feio de "quadrado branco" ao redor da logo da Ford, já que a imagem da logo tem fundo branco embutido. Logomarca da Ford alinhada à **esquerda**. Menu de navegação ("Home", "Lançamento", "Contato") **centralizado** no topo, com o texto na cor azul do projeto (`#1b357e` ou `#1351d8`) — nunca branco, já que o fundo agora é branco. No hover de cada item do menu, aplicar um leve efeito de "zoom" (`transform: scale(1.05)` + `transition: transform 0.25s ease`).
-- **Main (hero):** imagem grande da Ford Ranger, **centralizada** logo abaixo do header. A proporção está errada hoje — muito larga e curta, parecendo uma faixa/banner achatado. Aumentar a **altura** da imagem (não a largura, que já está boa em 70-80% da página), deixando ela com uma proporção mais equilibrada, menos "esticada pros lados". Se estiver usando `object-fit: cover` com uma altura fixa baixa, aumentar esse valor de altura; se a altura estiver em `auto`, verificar se algum CSS está forçando ela a ficar baixa demais. A imagem inteira deve ser **clicável**, envolvida numa tag `<a href="lancamento.html">`, levando o usuário para a página de Lançamento — exatamente como o link "aqui" e o item "Lançamento" do menu já fazem. Isso é uma exigência explícita do PDF original ("a segunda página... deve ser exibida após o usuário clicar no item de menu Lançamento ou na imagem do produto"). Abaixo da imagem, um texto pequeno centralizado: "Está é a nova Ranger Ford 2022. Verifique novidades **aqui**" — onde a palavra "aqui" é um link (`<a>`) que também leva para `lancamento.html`. A imagem e o texto abaixo dela compartilham o mesmo container/largura centralizada, mantendo o texto alinhado ao centro da imagem. Ao passar o mouse sobre a imagem, aplicar o **mesmo efeito de zoom** usado no menu (`transform: scale(1.05)`, mesma transição) — sem borda ou contorno azul no hover.
+- **Main (hero):** imagem grande da Ford Ranger, **centralizada** logo abaixo do header, ocupando entre 70-80% da largura da página. **Voltar para altura natural/proporcional** (`height: auto`, sem `object-fit: cover` forçando uma altura fixa) — a tentativa anterior de aumentar a altura artificialmente não ficou boa visualmente e foi descartada; a imagem deve escalar mantendo sua proporção original, sem distorcer nem esticar. A imagem inteira deve ser **clicável**, envolvida numa tag `<a href="lancamento.html">`, levando o usuário para a página de Lançamento — exatamente como o link "aqui" e o item "Lançamento" do menu já fazem. Isso é uma exigência explícita do PDF original ("a segunda página... deve ser exibida após o usuário clicar no item de menu Lançamento ou na imagem do produto"). Abaixo da imagem, um texto pequeno centralizado: "Está é a nova Ranger Ford 2022. Verifique novidades **aqui**" — onde a palavra "aqui" é um link (`<a>`) que também leva para `lancamento.html`. A imagem e o texto abaixo dela compartilham o mesmo container/largura centralizada, mantendo o texto alinhado ao centro da imagem. Ao passar o mouse sobre a imagem, aplicar o **mesmo efeito de zoom** usado no menu (`transform: scale(1.05)`, mesma transição) — sem borda ou contorno azul no hover.
 - **Footer:** fundo **azul** (`#1b357e` ou `#1351d8`), inspirado na estrutura do rodapé da Starbucks (wordmark grande + ícones + links de política + copyright, tudo centralizado, com uma logo pequena isolada num canto). Estrutura, de cima para baixo, tudo centralizado:
   1. Wordmark **"FORD BRASIL"** em maiúsculo, fonte grande e em negrito, cor branca — é texto estilizado, não a imagem da logo.
   2. Linha com **5 ícones** de redes sociais lado a lado, brancos, cada um como link `<a>` funcional abrindo em nova aba (`target="_blank"` + `rel="noopener noreferrer"`):
@@ -101,15 +101,22 @@ Acessada pelo item de menu "Lançamento" ou clicando na imagem do produto na Hom
   **Estado visual do checkbox marcado:** quando o usuário clica e marca um checkbox, precisa ficar visualmente óbvio que ele foi marcado — bom contraste de cor, tamanho adequado para ser percebido rapidamente (o padrão do navegador às vezes é pequeno/discreto demais). Se o checkbox padrão do navegador não ficar claro o suficiente, usar a propriedade CSS `accent-color` (com a cor azul do projeto) para estilizar de forma simples, sem precisar recriar o checkbox do zero com JavaScript.
 
 ### 3. `contato.html` — Contato
-Acessada pelo item de menu "Contato" na página principal.
+Acessada pelo item de menu "Contato" na página principal. Layout em **duas colunas**, replicando o protótipo original do PDF (Figura 3):
 
-- **Main:** formulário (`<form>`) com os seguintes campos:
-  - Nome do usuário
-  - E-mail para contato
-  - Telefone
-  - Tipo do contato (elogio, reclamação ou solicitação — usar `<select>` ou grupo de `<input type="radio">`)
-  - Mensagem (`<textarea>`)
-  - Botão "Enviar"
+- **Título "Fale Conosco":** centralizado horizontalmente, ocupando a largura inteira da página (não só a coluna direita) — deve ficar acima das duas colunas, não dentro de uma delas.
+- **Coluna esquerda:** imagem do carro **XLS 2.2 Diesel 4X4 AT 2022** — reaproveitar exatamente o mesmo arquivo de imagem já usado no 2º card da página de Lançamento. **Fundo branco da imagem ficando destacado contra o fundo da página (`#F4F6FA`):** testar `mix-blend-mode: multiply` no CSS dessa imagem — como o fundo da foto provavelmente é branco/claro sólido (fundo de estúdio), esse blend mode tende a "apagar" visualmente esse branco contra o fundo claro da página, deixando só o carro aparente (mesma técnica que já funcionou bem pra resolver o problema do fundo branco da logo). Testar visualmente o resultado; se não ficar limpo o suficiente, reportar o que aconteceu. Sem `border-radius`, sem sombra, sem moldura — o objetivo continua sendo o visual de "flutuando". Aumentar um pouco o tamanho da imagem em relação ao que está hoje, pra ficar mais proporcional ao bloco do formulário ao lado.
+- **Coluna direita:**
+  - Um heading **"Sobre Você"** logo acima do campo de nome, seguindo a hierarquia de tamanho da página (menor que o título principal "Fale Conosco", maior que os labels dos campos).
+  - Formulário (`<form>`) com os seguintes campos:
+    - Nome do usuário
+    - E-mail para contato
+    - Telefone
+    - Tipo do contato — **usar obrigatoriamente um `<select>`** (não radio buttons) com as opções: `Elogio`, `Reclamação`, `Solicitação`. É literalmente um campo de seleção com seta, que abre as opções ao clicar — isso é o que o professor pediu.
+    - Mensagem (`<textarea>`)
+    - Botão "Enviar"
+  - **Campos do formulário mais arredondados:** aumentar o `border-radius` dos campos de texto/select/textarea (hoje está em `4px`, deixar algo entre `8px` e `12px`) para um visual mais suave, menos "quadrado".
+  - **Bloco do formulário um pouco mais baixo:** adicionar um pouco mais de espaço acima do formulário (margin-top ou padding-top no container da coluna direita), pra ele não ficar colado no topo da seção.
+- **Botão "Enviar":** alinhar à **direita** da coluna do formulário (hoje está alinhado à esquerda — trocar `align-self: flex-start` por `align-self: flex-end`, ou o equivalente), e deixar ele um pouco mais **largo/esticado** horizontalmente (aumentar o `padding` lateral, ex: de `2rem` para `3rem`, ou definir um `min-width`).
 - **Transições visuais (opcional, mas recomendado):** ao passar o cursor sobre o botão "Enviar", ele deve aumentar de tamanho e mudar de cor (`:hover` + `transition` no CSS).
 - Mesmo header e footer das outras páginas, mantendo consistência visual.
 
