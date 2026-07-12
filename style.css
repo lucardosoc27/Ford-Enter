@@ -312,10 +312,13 @@ ul {
   color: #1b357e;
   font-size: 1.8rem;
   margin-bottom: 0.5rem;
+  /* título ocupa a largura inteira da seção, centralizado, acima das duas colunas */
+  text-align: center;
 }
 
 .secao-contato > p {
   margin-bottom: 1.5rem;
+  text-align: center;
 }
 
 /* duas colunas: imagem do carro à esquerda, formulário à direita */
@@ -326,17 +329,23 @@ ul {
 }
 
 .contato-imagem-coluna {
-  flex: 1;
+  /* um pouco maior que a coluna do formulário, pra ficar mais proporcional */
+  flex: 1.2;
 }
 
-/* imagem "flutuando": sem borda, sem sombra, sem fundo/card ao redor */
+/* imagem "flutuando": sem borda, sem sombra, sem fundo/card ao redor.
+   mix-blend-mode: multiply "apaga" o fundo branco/claro da foto contra o
+   fundo #F4F6FA da página, igual à técnica usada na logo do rodapé */
 .contato-imagem-carro {
   width: 100%;
   display: block;
+  mix-blend-mode: multiply;
 }
 
 .contato-form-coluna {
   flex: 1;
+  /* espaço acima do bloco do formulário, pra não ficar colado no topo da seção */
+  margin-top: 2rem;
 }
 
 /* heading "Sobre Você": menor que o h1 da página, maior que os labels */
@@ -363,7 +372,7 @@ ul {
 .formulario-contato textarea {
   padding: 0.6rem;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 10px; /* mais arredondado, visual mais suave */
   font-family: inherit;
   font-size: 1rem;
   background-color: #fff;
@@ -379,14 +388,14 @@ ul {
 
 .btn-enviar {
   margin-top: 1.5rem;
-  padding: 0.8rem 2rem;
+  padding: 0.8rem 3rem;
   font-size: 1rem;
   background-color: #1351d8;
   color: #fff;
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  align-self: flex-start;
+  align-self: flex-end;
   /* transição suave de tamanho e cor no hover */
   transition: background-color 0.3s ease, transform 0.3s ease;
 }

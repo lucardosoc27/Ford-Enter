@@ -30,7 +30,7 @@
 
   <main>
     <section class="secao-contato">
-      <h1>Fale conosco</h1>
+      <h1>Fale Conosco</h1>
       <p>Preencha o formulário abaixo e nossa equipe entrará em contato.</p>
 
       <!-- layout em duas colunas: imagem do carro à esquerda, formulário à direita -->
@@ -59,7 +59,10 @@
             <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000">
 
             <label for="tipo">Tipo de contato</label>
-            <select id="tipo" name="tipo">
+            <select id="tipo" name="tipo" required>
+              <!-- opção em branco: fica selecionada por padrão e some da lista
+                   de opções (hidden), então o campo começa vazio -->
+              <option value="" disabled selected hidden></option>
               <option value="elogio">Elogio</option>
               <option value="reclamacao">Reclamação</option>
               <option value="solicitacao">Solicitação</option>
