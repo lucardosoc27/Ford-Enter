@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ford Ranger - Contato</title>
+  
+  <link rel="stylesheet" href="anexo_desafio_htmlcss/css/reset.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="anexo_desafio_htmlcss/img/ford-96.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome via CDN, usado para os ícones de rede social no rodapé -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+  <header class="cabecalho">
+    <img src="anexo_desafio_htmlcss/img/logo-ford-256.png" alt="Logomarca Ford" class="logo">
+    <nav class="menu">
+      <ul>
+        <li><a href="index.html" class="link-menu">Home</a></li>
+        <li><a href="lancamento.html" class="link-menu">Lançamento</a></li>
+        <li><a href="contato.html" class="link-menu">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="secao-contato">
+      <h1>Fale conosco</h1>
+      <p>Preencha o formulário abaixo e nossa equipe entrará em contato.</p>
+
+      <form class="formulario-contato" onsubmit="return false">
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+
+        <label for="telefone">Telefone</label>
+        <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000">
+
+        <fieldset class="tipo-contato">
+          <legend>Tipo de contato</legend>
+
+          <input type="radio" id="elogio" name="tipo" value="elogio">
+          <label for="elogio">Elogio</label>
+
+          <input type="radio" id="reclamacao" name="tipo" value="reclamacao">
+          <label for="reclamacao">Reclamação</label>
+
+          <input type="radio" id="solicitacao" name="tipo" value="solicitacao">
+          <label for="solicitacao">Solicitação</label>
+        </fieldset>
+
+        <label for="mensagem">Mensagem</label>
+        <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem"></textarea>
+
+        <button type="submit" class="btn-enviar">Enviar</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <!-- wordmark grande em texto (não é imagem), estilo inspirado no rodapé da Starbucks -->
+    <p class="rodape-wordmark">FORD BRASIL</p>
+
+    <!-- linha com os 5 ícones de redes sociais -->
+    <ul class="redes-sociais">
+      <li><a href="https://www.facebook.com/FordBrasil/?locale=pt_BR" target="_blank" rel="noopener noreferrer" class="link-social" aria-label="Facebook">
+        <i class="fa-brands fa-facebook"></i>
+      </a></li>
+      <li><a href="https://www.youtube.com/fordbrasil" target="_blank" rel="noopener noreferrer" class="link-social" aria-label="YouTube">
+        <i class="fa-brands fa-youtube"></i>
+      </a></li>
+      <li><a href="https://www.instagram.com/fordbrasil/" target="_blank" rel="noopener noreferrer" class="link-social" aria-label="Instagram">
+        <i class="fa-brands fa-instagram"></i>
+      </a></li>
+      <li><a href="https://www.linkedin.com/company/ford-brasil/" target="_blank" rel="noopener noreferrer" class="link-social" aria-label="LinkedIn">
+        <i class="fa-brands fa-linkedin"></i>
+      </a></li>
+      <li><a href="https://www.tiktok.com/@fordbrasil" target="_blank" rel="noopener noreferrer" class="link-social" aria-label="TikTok">
+        <i class="fa-brands fa-tiktok"></i>
+      </a></li>
+    </ul>
+
+    <!-- links de política, lado a lado -->
+    <div class="rodape-links">
+      <a href="#" class="link-rodape">Política de Privacidade</a>
+      <a href="#" class="link-rodape">Direitos do Titular</a>
+    </div>
+
+    <p class="rodape-copyright">Copyright &copy; 2026 Ford Motor Company - Todos os direitos reservados.</p>
+
+    <!-- logo isolada no canto inferior direito, separada do bloco centralizado -->
+    <div class="rodape-logo-canto">
+      <img src="anexo_desafio_htmlcss/img/ford-96.png" alt="Logomarca Ford" class="logo-rodape">
+    </div>
+  </footer>
+
+</body>
+</html>

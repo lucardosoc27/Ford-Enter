@@ -1,0 +1,517 @@
+/* ===============================
+   ESTILOS GERAIS DO SITE FORD
+   Cores do projeto:
+   azul escuro: #1b357e
+   azul vibrante: #1351d8
+   =============================== */
+
+/* html e body ocupando 100% da altura, necessário para o rodapé fixo */
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  color: #222;
+  /* flexbox em coluna: header, main e footer empilhados.
+     Isso é o que garante o rodapé sempre na base da página. */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* o main cresce para ocupar o espaço livre, empurrando o footer para baixo */
+main {
+  flex: 1;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ===============================
+   CABEÇALHO E MENU
+   =============================== */
+
+.cabecalho {
+  /* fundo branco: a logo da Ford tem fundo branco embutido, então um
+     cabeçalho branco evita o "quadrado" ao redor dela */
+  background-color: #fff;
+  padding: 1rem 2rem;
+  /* grid de 3 colunas: logo fica na 1ª coluna e o menu, na coluna do meio,
+     fica centralizado na faixa toda do cabeçalho (não só no espaço livre) */
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  border-bottom: 1px solid #e0e0e0; /* px, linha fina para separar do resto da página */
+}
+
+.logo {
+  height: 60px; /* px para um detalhe fixo pequeno */
+  justify-self: start;
+}
+
+.menu {
+  justify-self: center;
+}
+
+.menu ul {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.link-menu {
+  /* fundo do header agora é branco, então o texto do menu precisa ser azul */
+  color: #1b357e;
+  font-size: 1rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  display: inline-block; /* necessário para o transform: scale funcionar direito */
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.25s ease;
+}
+
+/* pseudoclasse hover no menu: mesmo efeito de zoom leve usado na imagem do hero */
+.link-menu:hover {
+  background-color: #1351d8;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* pseudoclasse focus, importante para acessibilidade no teclado */
+.link-menu:focus {
+  outline: 2px solid #1351d8;
+}
+
+/* ===============================
+   PÁGINA HOME
+   =============================== */
+
+.destaque {
+  min-height: 70vh; /* seção de destaque preenchendo boa parte da tela */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* container que segura imagem e texto juntos, com a mesma largura,
+   pra imagem e texto crescerem/ficarem centralizados sempre em conjunto */
+.destaque-conteudo {
+  width: 75%; /* imagem bem grande, ocupando boa parte da página */
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* agora a imagem fica dentro de um <a>, então essa classe controla o link
+   inteiro: tira sublinhado/contorno padrão e deixa um foco visível e discreto */
+.link-imagem-produto {
+  display: inline-block; /* necessário pra o transform: scale funcionar direito */
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+/* contorno de foco customizado, só aparece navegando pelo teclado (Tab) */
+.link-imagem-produto:focus {
+  outline: 2px solid #1351d8;
+  outline-offset: 4px;
+}
+
+.imagem-produto {
+  /* ocupa 100% do container .destaque-conteudo, que é quem controla a largura */
+  width: 100%;
+  border-radius: 8px;
+  display: block;
+  outline: none;
+  border: none;
+  transition: transform 0.25s ease;
+}
+
+/* pseudoclasse hover no link da imagem: mesmo efeito de zoom do menu */
+.link-imagem-produto:hover .imagem-produto {
+  transform: scale(1.05);
+}
+
+.texto-destaque {
+  font-size: 0.95rem;
+  max-width: 450px;
+}
+
+.link-aqui {
+  color: #1351d8;
+  font-weight: 600;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+/* pseudoclasse hover no link "aqui" */
+.link-aqui:hover {
+  color: #1b357e;
+}
+
+/* ===============================
+   PÁGINA LANÇAMENTO
+   =============================== */
+
+.secao-video {
+  padding: 2rem;
+  text-align: center;
+}
+
+.secao-video h1 {
+  color: #1b357e;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.secao-video p {
+  max-width: 700px;
+  margin: 1.5rem auto 0 auto;
+  line-height: 1.6;
+}
+
+.video-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  /* mantém a proporção 16:9 do vídeo em qualquer largura de tela,
+     evitando as barras pretas que apareciam com altura fixa em vh */
+  aspect-ratio: 16 / 9;
+}
+
+.video-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 8px;
+}
+
+.comparacao {
+  padding: 2rem;
+  text-align: center;
+}
+
+.comparacao h2 {
+  color: #1b357e;
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+}
+
+/* linha dos 3 cards: gap generoso para não deixar os cards grudados */
+.cards-carros {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.5rem;
+}
+
+/* cada card é um bloco independente: borda + fundo levemente diferente
+   do resto da página, pra ficar bem separado dos outros dois */
+.card-carro {
+  background-color: #f2f4fa;
+  border: 1px solid #ccd6f0; /* px, borda fina de separação */
+  border-radius: 8px;
+  padding: 1.2rem;
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.card-imagem {
+  width: 100%;
+  max-width: 180px; /* imagem compacta dentro do card */
+  height: auto;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+/* linha com o checkbox à esquerda e o texto (título + preço) à direita */
+.card-linha {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  width: 100%;
+}
+
+/* accent-color deixa o checkbox marcado bem visível, na cor do projeto,
+   em vez do estilo padrão (geralmente cinza/preto fraco) do navegador */
+.card-checkbox {
+  accent-color: #1351d8;
+  width: 22px; /* px, caixinha grande o bastante pra cada carro ficar bem distinto */
+  height: 22px;
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.card-texto {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  text-align: left;
+  cursor: pointer;
+}
+
+.card-titulo {
+  font-weight: 600;
+  color: #1b357e;
+  font-size: 0.95rem;
+}
+
+.card-preco {
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.btn-comparar {
+  margin-top: 1.5rem;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  background-color: #1351d8;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-comparar:hover {
+  background-color: #1b357e;
+  transform: scale(1.05);
+}
+
+/* ===============================
+   PÁGINA CONTATO
+   =============================== */
+
+.secao-contato {
+  padding: 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.secao-contato h1 {
+  color: #1b357e;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.secao-contato > p {
+  margin-bottom: 1.5rem;
+}
+
+.formulario-contato {
+  display: flex;
+  flex-direction: column;
+}
+
+.formulario-contato label {
+  margin-top: 1rem;
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+  color: #1b357e;
+}
+
+.formulario-contato input,
+.formulario-contato textarea {
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+/* pseudoclasse focus nos campos do formulário */
+.formulario-contato input:focus,
+.formulario-contato textarea:focus {
+  outline: none;
+  border-color: #1351d8;
+}
+
+.tipo-contato {
+  margin-top: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 1rem;
+}
+
+.tipo-contato legend {
+  color: #1b357e;
+  font-weight: 600;
+  padding: 0 0.3rem;
+}
+
+.tipo-contato label {
+  margin: 0 0.5rem 0 0.2rem;
+  font-weight: 400;
+  display: inline;
+  color: #222;
+}
+
+.btn-enviar {
+  margin-top: 1.5rem;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  background-color: #1351d8;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  align-self: flex-start;
+  /* transição suave de tamanho e cor no hover */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-enviar:hover {
+  background-color: #1b357e;
+  transform: scale(1.1);
+}
+
+/* ===============================
+   RODAPÉ
+   =============================== */
+
+.rodape {
+  /* position: relative é o que permite a logo do canto (position: absolute)
+     se posicionar em relação ao rodapé, e não à página inteira */
+  position: relative;
+  background-color: #1b357e;
+  color: #fff;
+  /* padding simétrico e enxuto: um padding-bottom exagerado deixava o
+     rodapé mais alto do que precisava, empurrando a logo do canto pra
+     baixo da área visível da tela (exigindo rolagem extra pra vê-la) */
+  padding: 2rem;
+  /* bloco centralizado: wordmark / ícones / links / copyright, um embaixo do outro */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  text-align: center;
+}
+
+/* wordmark "FORD BRASIL" grande, estilo Starbucks, no lugar da logo em imagem */
+.rodape-wordmark {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+}
+
+.redes-sociais {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+}
+
+/* ícones do Font Awesome: cor branca para contrastar com o fundo azul */
+.link-social {
+  color: #fff;
+  font-size: 1.6rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* pseudoclasse hover nos ícones de rede social */
+.link-social:hover {
+  transform: scale(1.15);
+  color: #cfe0ff;
+}
+
+/* linha com os dois links de política, lado a lado e sublinhados */
+.rodape-links {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.link-rodape {
+  color: #fff;
+  text-decoration: underline;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.link-rodape:hover {
+  color: #cfe0ff;
+}
+
+.rodape-copyright {
+  font-size: 0.85rem;
+  opacity: 0.85;
+}
+
+/* logo isolada no canto direito, fora do bloco centralizado.
+   Sem badge/círculo branco: a imagem ford-96.png já tem fundo transparente
+   de verdade (conferido pixel a pixel), então não precisa de nenhum
+   disfarce ao redor dela.
+   top: 50% + translateY(-50%) centraliza a logo verticalmente em relação
+   à altura do rodapé de forma automática, sem precisar ajustar bottom
+   toda vez que o conteúdo do rodapé muda de altura. */
+.rodape-logo-canto {
+  position: absolute;
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.logo-rodape {
+  /* mesmo tamanho (altura) usado na logo do header, pra ficar consistente */
+  height: 60px;
+  width: auto;
+  display: block;
+}
+
+/* ===============================
+   RESPONSIVIDADE - TELAS MENORES (celular)
+   =============================== */
+
+@media (max-width: 600px) {
+  .cabecalho {
+    /* em telas pequenas, empilha logo e menu em vez de usar as 3 colunas */
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 1rem;
+  }
+
+  .logo,
+  .menu {
+    justify-self: center;
+  }
+
+  .destaque-conteudo {
+    /* em telas pequenas, a imagem ocupa quase toda a largura disponível */
+    width: 92%;
+  }
+
+  .rodape-wordmark {
+    font-size: 1.8rem;
+  }
+
+  /* em telas pequenas, a logo do canto sai do position:absolute e entra
+     na fila do bloco centralizado, pra não sobrepor o texto do rodapé */
+  .rodape-logo-canto {
+    position: static;
+    margin-top: 0.5rem;
+  }
+
+  .cards-carros {
+    gap: 1.5rem;
+  }
+
+  .card-carro {
+    width: 92%;
+    max-width: 320px;
+  }
+}

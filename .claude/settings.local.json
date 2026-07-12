@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pip3 list *)",
+      "Bash(python3 -c \"import playwright\")",
+      "Bash(file \"anexo_desafio_htmlcss/img/\"*.png)",
+      "Bash(command -v identify)",
+      "Bash(identify -verbose \"anexo_desafio_htmlcss/img/ford-96.png\")",
+      "Bash(python3 -c ' *)",
+      "Bash(python3 *)",
+      "Bash(git init *)",
+      "Bash(git add *)",
+      "Bash(git commit *)"
+    ]
+  }
+}

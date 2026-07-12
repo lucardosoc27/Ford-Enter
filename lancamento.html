@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ford Ranger - Lançamento</title>
+
+  <link rel="stylesheet" href="anexo_desafio_htmlcss/css/reset.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="anexo_desafio_htmlcss/img/ford-96.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome via CDN, usado para os ícones de rede social no rodapé -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+  <header class="cabecalho">
+    <img src="anexo_desafio_htmlcss/img/logo-ford-256.png" alt="Logomarca Ford" class="logo">
+    <nav class="menu">
+      <ul>
+        <li><a href="index.html" class="link-menu">Home</a></li>
+        <li><a href="lancamento.html" class="link-menu">Lançamento</a></li>
+        <li><a href="contato.html" class="link-menu">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Vídeo promocional do veículo, embutido do YouTube -->
+    <section class="secao-video">
+      <h1>Assista ao vídeo de lançamento</h1>
+      <div class="video-wrapper">
+        <iframe
+          src="https://www.youtube.com/embed/vQsryuNmsL0?autoplay=1&mute=1"
+          title="Vídeo de lançamento Ford Ranger"
+          allow="autoplay"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <p>
+        A nova Ford Ranger chegou para reforçar a linha de picapes robustas
+        da Ford. Com motorização a diesel, tração 4x4 e três versões
+        diferentes, ela atende desde o uso profissional até quem busca
+        aventura fora de estrada.
+      </p>
+    </section>
+
+    <!-- Comparação de modelos: um card por carro, cada um com imagem e
+         checkbox + texto lado a lado -->
+    <section class="comparacao">
+      <h2>Compare os modelos</h2>
+      <div class="cards-carros">
+        <article class="card-carro">
+          <img src="anexo_desafio_htmlcss/img/XL Cabine.jpg" alt="Ford Ranger XL Cabine Simples" class="card-imagem">
+          <div class="card-linha">
+            <input type="checkbox" name="modelo" id="modelo1" class="card-checkbox">
+            <label for="modelo1" class="card-texto">
+              <span class="card-titulo">XL Cabine Simples 2.2 Diesel 4X4 MT 2022</span>
+              <span class="card-preco">Preço Sugerido: R$ 183.850</span>
+            </label>
+          </div>
+        </article>
+
+        <article class="card-carro">
+          <img src="anexo_desafio_htmlcss/img/xls 2.2 diesel.jpg" alt="Ford Ranger XLS 2.2 Diesel" class="card-imagem">
+          <div class="card-linha">
+            <input type="checkbox" name="modelo" id="modelo2" class="card-checkbox">
+            <label for="modelo2" class="card-texto">
+              <span class="card-titulo">XLS 2.2 Diesel 4X4 AT 2022</span>
+              <span class="card-preco">Preço Sugerido: R$ 220.690</span>
+            </label>
+          </div>
+        </article>
+
+        <article class="card-carro">
+          <img src="anexo_desafio_htmlcss/img/storm.jpg" alt="Ford Ranger Storm 3.2 Diesel" class="card-imagem">
+          <div class="card-linha">
+            <input type="checkbox" name="modelo" id="modelo3" class="card-checkbox">
+            <label for="modelo3" class="card-texto">
+              <span class="card-titulo">Storm 3.2 Diesel 4X4 AT 2022</span>
+              <span class="card-preco">Preço Sugerido: R$ 222.790</span>
+            </label>
+          </div>
+        </article>
+      </div>
+      <button type="button" class="btn-comparar">Comparar Carros</button>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <!-- wordmark grande em texto (não é imagem), estilo inspirado no rodapé da Starbucks -->
+    <p class="rodape-wordmark">FORD BRASIL</p>
+
+    <!-- linha com os 5 ícones de redes sociais -->
+    <ul class="redes-sociais">
+      <li><a href="https://www.facebook.com/FordBrasil/?locale=pt_BR" target="_blank" rel="noopener noreferrer" class="link-social" aria-label="Facebook">
+        <i class="fa-brands fa-facebook"></i>
+      </a></li>
+      <li><a href="https://www.youtube.com/fordbrasil" target="_blank" rel="noopener noreferrer" class="link-social" aria-label="YouTube">
+        <i class="fa-brands fa-youtube"></i>
+      </a></li>
+      <li><a href="https://www.instagram.com/fordbrasil/" target="_blank" rel="noopener noreferrer" class="link-social" aria-label="Instagram">
+        <i class="fa-brands fa-instagram"></i>
+      </a></li>
+      <li><a href="https://www.linkedin.com/company/ford-brasil/" target="_blank" rel="noopener noreferrer" class="link-social" aria-label="LinkedIn">
+        <i class="fa-brands fa-linkedin"></i>
+      </a></li>
+      <li><a href="https://www.tiktok.com/@fordbrasil" target="_blank" rel="noopener noreferrer" class="link-social" aria-label="TikTok">
+        <i class="fa-brands fa-tiktok"></i>
+      </a></li>
+    </ul>
+
+    <!-- links de política, lado a lado -->
+    <div class="rodape-links">
+      <a href="#" class="link-rodape">Política de Privacidade</a>
+      <a href="#" class="link-rodape">Direitos do Titular</a>
+    </div>
+
+    <p class="rodape-copyright">Copyright &copy; 2026 Ford Motor Company - Todos os direitos reservados.</p>
+
+    <!-- logo isolada no canto inferior direito, separada do bloco centralizado -->
+    <div class="rodape-logo-canto">
+      <img src="anexo_desafio_htmlcss/img/ford-96.png" alt="Logomarca Ford" class="logo-rodape">
+    </div>
+  </footer>
+
+</body>
+</html>
