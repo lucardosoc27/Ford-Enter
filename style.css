@@ -47,6 +47,10 @@ ul {
   padding: 0.5rem 2rem;
   display: flex;
   justify-content: flex-end;
+  /* layout "boxed": faixa contida numa largura máxima e centralizada,
+     igual ao header e ao footer, pra ficar tudo alinhado */
+  max-width: 1600px;
+  margin: 0 auto;
 }
 
 .link-concessionarias {
@@ -77,6 +81,10 @@ ul {
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   border-bottom: 1px solid #e0e0e0; /* px, linha fina para separar do resto da página */
+  /* layout "boxed": mesma largura máxima e centralização da faixa cinza
+     e do footer, pra as bordas ficarem alinhadas entre os três */
+  max-width: 1600px;
+  margin: 0 auto;
 }
 
 .logo {
@@ -435,6 +443,13 @@ ul {
 /* ===============================
    RODAPÉ
    =============================== */
+
+/* layout "boxed": envolve os dois blocos do footer (busca + bloco existente)
+   na mesma largura máxima e centralização do header, pra ficar tudo alinhado */
+.rodape-container {
+  max-width: 1600px;
+  margin: 0 auto;
+}
 
 /* faixa nova de busca, decorativa, no topo do rodapé */
 .rodape-busca {
