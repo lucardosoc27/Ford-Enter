@@ -90,7 +90,24 @@ Acessada pelo item de menu "Lançamento" ou clicando na imagem do produto na Hom
   - **Corrigir proporção do vídeo:** hoje o vídeo aparece com barras pretas nas laterais (efeito "pilarbox"), sinal de que o container não está na proporção correta. Usar a técnica de aspect-ratio 16:9 (via `aspect-ratio: 16 / 9` no CSS do container do iframe, com `width: 100%` e `height: 100%` no próprio iframe) para o vídeo preencher o espaço sem sobrar faixas pretas.
   - **Largura do vídeo:** manter a mesma largura de container que já está funcionando hoje (não esticar para a largura total da página) — só corrigir a proporção interna (item acima) para eliminar as barras pretas dentro dessa mesma largura.
   - **Texto descritivo (usar exatamente este, não gerar um novo):** "A nova Ford Ranger chegou para reforçar a linha de picapes robustas da Ford. Com motorização a diesel, tração 4x4 e três versões diferentes, ela atende desde o uso profissional até quem busca aventura fora de estrada."
-- **Meio:** ~~seção de comparação de modelos com 3 cards + checkbox~~ — **REMOVIDA por instrução do professor.** Essa parte correspondia ao Passo 11 do PDF original (tabela/comparação de modelos com checkbox e botão "Comparar Carros"). O professor confirmou que essa parte não precisa mais ser feita, então a página de Lançamento termina no vídeo + texto descritivo, sem a seção de carros/checkbox abaixo. **Atenção para os critérios de avaliação:** o PDF original lista "Utilização de tabelas" como critério — essa seção era o que cobria esse critério. Com a remoção, pode valer a pena confirmar com o professor se esse critério também foi dispensado, ou se sobra alguma outra forma de atender a ele no projeto.
+- **Meio:** três "cards" de carro lado a lado, com espaçamento bem visível entre eles (`gap` generoso no container flex/grid, ex: `2rem` ou mais) e uma separação clara entre um card e outro (borda sutil ao redor de cada card, ou fundo levemente diferenciado) — os 3 precisam parecer blocos independentes, nunca grudados um no outro. Cada card, de cima para baixo:
+  1. Imagem do carro, em tamanho compacto (não ocupar a largura toda). **Fundo branco da foto destacando contra o fundo do card/página:** aplicar `mix-blend-mode: multiply` nas 3 imagens, exatamente a mesma técnica que já resolveu esse problema na imagem do carro da página de Contato — deve funcionar bem aqui também, já que é o mesmo tipo de fundo de estúdio branco/claro. Testar visualmente cada uma das 3 (podem ter tons de fundo ligeiramente diferentes entre si) e ajustar se alguma ficar diferente das outras.
+  2. Logo abaixo da imagem, uma linha com **checkbox à esquerda** + **texto à direita** (título do modelo numa linha, preço na linha de baixo):
+     - Título: `"XL Cabine Simples 2.2 Diesel 4X4 MT 2022"` (sem numeração antes do nome).
+     - Preço: `"Preço Sugerido: R$ 183.850"`.
+  Cada checkbox precisa ter tamanho e contraste suficientes para ficar claramente distinto dos outros dois — nunca dando a impressão de ser um único checkbox compartilhado entre os 3 carros.
+
+  Usar exatamente estes três modelos, na mesma ordem em que os carros aparecem na página:
+
+| Ordem | Modelo | Preço sugerido |
+|---|---|---|
+| 1º carro | XL Cabine Simples 2.2 Diesel 4X4 MT 2022 | R$ 183.850 |
+| 2º carro | XLS 2.2 Diesel 4X4 AT 2022 | R$ 220.690 |
+| 3º carro | Storm 3.2 Diesel 4X4 AT 2022 | R$ 222.790 |
+
+- **Base:** botão "Comparar Carros" abaixo dos três cards (sem necessidade de funcionalidade real ao clicar, é só visual).
+
+  **Estado visual do checkbox marcado:** quando o usuário clica e marca um checkbox, precisa ficar visualmente óbvio que ele foi marcado — bom contraste de cor, tamanho adequado para ser percebido rapidamente (o padrão do navegador às vezes é pequeno/discreto demais). Se o checkbox padrão do navegador não ficar claro o suficiente, usar a propriedade CSS `accent-color` (com a cor azul do projeto) para estilizar de forma simples, sem precisar recriar o checkbox do zero com JavaScript.
 
 ### 3. `contato.html` — Contato
 Acessada pelo item de menu "Contato" na página principal. Layout em **duas colunas**, replicando o protótipo original do PDF (Figura 3):
