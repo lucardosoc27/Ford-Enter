@@ -48,9 +48,18 @@ ul {
   display: flex;
   justify-content: flex-end;
   /* layout "boxed": faixa contida numa largura máxima e centralizada,
-     igual ao header e ao footer, pra ficar tudo alinhado */
+     igual ao header e ao footer, pra ficar tudo alinhado.
+     width: 100% é necessário aqui porque o body é um flex container
+     (flex-direction: column) - sem isso, a margin: auto "engole" o
+     espaço todo e o elemento encolhe pro tamanho do próprio conteúdo,
+     em vez de esticar até o max-width.
+     box-sizing: border-box também é necessário: sem isso, o padding
+     (0.5rem 2rem) soma por fora do max-width e a faixa fica mais larga
+     que o footer, desalinhando as bordas laterais. */
+  width: 100%;
   max-width: 1700px;
   margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .link-concessionarias {
@@ -82,9 +91,16 @@ ul {
   align-items: center;
   border-bottom: 1px solid #e0e0e0; /* px, linha fina para separar do resto da página */
   /* layout "boxed": mesma largura máxima e centralização da faixa cinza
-     e do footer, pra as bordas ficarem alinhadas entre os três */
+     e do footer, pra as bordas ficarem alinhadas entre os três.
+     width: 100% é necessário porque o body é flex (flex-direction: column) -
+     sem isso, a margin: auto engole o espaço todo em vez de esticar o
+     cabeçalho até o max-width (mesmo motivo explicado em .faixa-superior).
+     box-sizing: border-box pelo mesmo motivo: mantém o padding somado
+     DENTRO do max-width, pra bater exatamente com a largura do footer. */
+  width: 100%;
   max-width: 1700px;
   margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .logo {
@@ -445,8 +461,12 @@ ul {
    =============================== */
 
 /* layout "boxed": envolve os dois blocos do footer (busca + bloco existente)
-   na mesma largura máxima e centralização do header, pra ficar tudo alinhado */
+   na mesma largura máxima e centralização do header, pra ficar tudo alinhado.
+   width: 100% pelo mesmo motivo do .cabecalho e da .faixa-superior: o
+   footer também é filho direto do body (flex-direction: column), então
+   sem essa largura explícita a margin: auto engole o espaço todo. */
 .rodape-container {
+  width: 100%;
   max-width: 1700px;
   margin: 0 auto;
 }
