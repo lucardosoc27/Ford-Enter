@@ -39,6 +39,30 @@ ul {
 }
 
 /* ===============================
+   FAIXA CINZA ACIMA DO CABEÇALHO
+   =============================== */
+
+.faixa-superior {
+  background-color: #f2f2f2;
+  padding: 0.5rem 2rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.link-concessionarias {
+  color: #1b357e;
+  font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: color 0.3s ease;
+}
+
+.link-concessionarias:hover {
+  color: #1351d8;
+}
+
+/* ===============================
    CABEÇALHO E MENU
    =============================== */
 
@@ -412,11 +436,33 @@ ul {
    RODAPÉ
    =============================== */
 
+/* faixa nova de busca, decorativa, no topo do rodapé */
+.rodape-busca {
+  background-color: #0f1a5c;
+  padding: 0.8rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
+  color: #fff;
+}
+
+.input-busca-rodape {
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 20px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  width: 220px;
+  max-width: 60vw;
+}
+
 .rodape {
   /* position: relative é o que permite a logo do canto (position: absolute)
      se posicionar em relação ao rodapé, e não à página inteira */
   position: relative;
-  background-color: #1b357e;
+  /* azul quase preto, mais escuro que o bloco de busca acima */
+  background-color: #0a0e23;
   color: #fff;
   /* padding simétrico e enxuto: um padding-bottom exagerado deixava o
      rodapé mais alto do que precisava, empurrando a logo do canto pra
