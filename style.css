@@ -241,6 +241,9 @@ ul {
   height: auto;
   border-radius: 6px;
   object-fit: cover;
+  /* mesma técnica usada na imagem da Contato: "apaga" o fundo branco de
+     estúdio das 3 fotos contra o fundo do próprio card (#f2f4fa) */
+  mix-blend-mode: multiply;
 }
 
 /* linha com o checkbox à esquerda e o texto (título + preço) à direita */

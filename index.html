@@ -3,24 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ford Ranger - Home</title>
-
-  <!-- reset.css já existente no projeto, usado como base -->
   <link rel="stylesheet" href="anexo_desafio_htmlcss/css/reset.css">
-  <!-- nosso arquivo de estilos -->
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="anexo_desafio_htmlcss/img/ford-96.png">
+  <title>Ford Ranger - Home</title>
 
-  <!-- fonte externa do Google Fonts -->
+  <!-- fonte externa do google -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-
-  <!-- Font Awesome via CDN, usado para os ícones de rede social no rodapé -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
 
-  <!-- Cabeçalho com logo e menu, igual em todas as páginas -->
+  <!-- Parte do cabeçalho  -->
   <header class="cabecalho">
     <img src="anexo_desafio_htmlcss/img/logo-ford-256.png" alt="Logomarca Ford" class="logo">
     <nav class="menu">
@@ -33,9 +28,9 @@
   </header>
 
   <main>
-    <!-- Seção de destaque: imagem grande da Ranger centralizada, com texto pequeno embaixo -->
+    <!-- Sessao da imagem da Ford -->
     <section class="destaque">
-      <!-- imagem inteira é clicável e leva pra mesma página que o link "aqui" e o menu "Lançamento" -->
+      <div class="destaque-conteudo">
       <a href="lancamento.html" class="link-imagem-produto">
         <img src="anexo_desafio_htmlcss/img/imagem_1.jpg" alt="Ford Ranger, o novo lançamento" class="imagem-produto">
       </a>
@@ -43,15 +38,13 @@
         Está é a nova Ranger Ford 2022. Verifique novidades
         <a href="lancamento.html" class="link-aqui">aqui</a>
       </p>
+      </div>
     </section>
   </main>
 
-  <!-- Rodapé fixo na base da página, presente em todas as páginas -->
+  <!-- Parte do rodape e icones das redes sociais -->
   <footer class="rodape">
-    <!-- wordmark grande em texto (não é imagem), estilo inspirado no rodapé da Starbucks -->
     <p class="rodape-wordmark">FORD BRASIL</p>
-
-    <!-- linha com os 5 ícones de redes sociais -->
     <ul class="redes-sociais">
       <li><a href="https://www.facebook.com/FordBrasil/?locale=pt_BR" target="_blank" rel="noopener noreferrer" class="link-social" aria-label="Facebook">
         <i class="fa-brands fa-facebook"></i>
@@ -70,15 +63,12 @@
       </a></li>
     </ul>
 
-    <!-- links de política, lado a lado -->
+    <!-- Politica de privacidade, direitos do titular e copyright -->
     <div class="rodape-links">
       <a href="#" class="link-rodape">Política de Privacidade</a>
       <a href="#" class="link-rodape">Direitos do Titular</a>
     </div>
-
     <p class="rodape-copyright">Copyright &copy; 2026 Ford Motor Company - Todos os direitos reservados.</p>
-
-    <!-- logo isolada no canto inferior direito, separada do bloco centralizado -->
     <div class="rodape-logo-canto">
       <img src="anexo_desafio_htmlcss/img/ford-96.png" alt="Logomarca Ford" class="logo-rodape">
     </div>
