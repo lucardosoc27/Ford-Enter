@@ -49,7 +49,7 @@ ul {
   justify-content: flex-end;
   /* layout "boxed": faixa contida numa largura máxima e centralizada,
      igual ao header e ao footer, pra ficar tudo alinhado */
-  max-width: 1600px;
+  max-width: 1700px;
   margin: 0 auto;
 }
 
@@ -83,7 +83,7 @@ ul {
   border-bottom: 1px solid #e0e0e0; /* px, linha fina para separar do resto da página */
   /* layout "boxed": mesma largura máxima e centralização da faixa cinza
      e do footer, pra as bordas ficarem alinhadas entre os três */
-  max-width: 1600px;
+  max-width: 1700px;
   margin: 0 auto;
 }
 
@@ -141,7 +141,7 @@ ul {
    pra imagem e texto crescerem/ficarem centralizados sempre em conjunto */
 .destaque-conteudo {
   width: 85%; /* imagem bem grande, ocupando boa parte da página */
-  max-width: 1400px;
+  max-width: 1700px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -447,7 +447,7 @@ ul {
 /* layout "boxed": envolve os dois blocos do footer (busca + bloco existente)
    na mesma largura máxima e centralização do header, pra ficar tudo alinhado */
 .rodape-container {
-  max-width: 1600px;
+  max-width: 1700px;
   margin: 0 auto;
 }
 
