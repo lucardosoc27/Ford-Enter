@@ -15,6 +15,10 @@
 </head>
 <body>
 
+  <!-- Envolve a página inteira: dá a largura máxima boxed e a borda lateral
+       fina que liga o topo (faixa cinza) até a base (footer) -->
+  <div class="pagina-wrapper">
+
   <!-- Faixa cinza fina acima do header, só decorativa (inspirada no site oficial da Ford) -->
   <div class="faixa-superior">
     <a href="#" class="link-concessionarias">
@@ -49,15 +53,15 @@
     </section>
   </main>
 
-  <!-- Parte do rodape e icones das redes sociais -->
-  <footer class="rodape-container">
+  <!-- Rodapé inteiro: campo de busca + bloco principal (wordmark, ícones, links, copyright, logo) -->
+  <footer class="rodape">
     <!-- Bloco novo, decorativo, no topo do rodapé -->
     <div class="rodape-busca">
       <i class="fa-solid fa-magnifying-glass"></i>
       <input type="search" class="input-busca-rodape" placeholder="Pesquisar">
     </div>
 
-    <div class="rodape">
+    <div class="rodape-principal">
       <p class="rodape-wordmark">FORD BRASIL</p>
       <ul class="redes-sociais">
         <li><a href="https://www.facebook.com/FordBrasil/?locale=pt_BR" target="_blank" rel="noopener noreferrer" class="link-social" aria-label="Facebook">
@@ -88,6 +92,8 @@
       </div>
     </div>
   </footer>
+
+  </div>
 
 </body>
 </html>

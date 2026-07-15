@@ -17,11 +17,23 @@ body {
   /* fundo geral bem sutil (cinza-azulado), só pra dar unidade visual com o
      azul do header/footer - o header continua branco puro, isso não mexe nele */
   background-color: #F4F6FA;
-  /* flexbox em coluna: header, main e footer empilhados.
-     Isso é o que garante o rodapé sempre na base da página. */
+}
+
+/* envolve faixa de concessionárias + header + main + footer.
+   é aqui (não mais no body) que fica o flexbox em coluna que empurra o
+   rodapé pra base da página - precisou mudar de lugar porque agora é essa
+   div que tem a largura máxima (max-width) e a borda lateral fina. */
+.pagina-wrapper {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  /* mesma largura máxima do header/footer/faixa cinza, centralizada */
+  max-width: 1700px;
+  margin: 0 auto;
+  /* borda fina dos dois lados: cria a linha vertical que "emoldura" o
+     site inteiro, do topo (faixa cinza) até a base (footer) */
+  border-left: 1px solid #e0e0e0;
+  border-right: 1px solid #e0e0e0;
 }
 
 /* o main cresce para ocupar o espaço livre, empurrando o footer para baixo */
@@ -49,8 +61,8 @@ ul {
   justify-content: flex-end;
   /* layout "boxed": faixa contida numa largura máxima e centralizada,
      igual ao header e ao footer, pra ficar tudo alinhado.
-     width: 100% é necessário aqui porque o body é um flex container
-     (flex-direction: column) - sem isso, a margin: auto "engole" o
+     width: 100% é necessário aqui porque o .pagina-wrapper (pai direto) é
+     um flex container (flex-direction: column) - sem isso, a margin: auto "engole" o
      espaço todo e o elemento encolhe pro tamanho do próprio conteúdo,
      em vez de esticar até o max-width.
      box-sizing: border-box também é necessário: sem isso, o padding
@@ -92,8 +104,8 @@ ul {
   border-bottom: 1px solid #e0e0e0; /* px, linha fina para separar do resto da página */
   /* layout "boxed": mesma largura máxima e centralização da faixa cinza
      e do footer, pra as bordas ficarem alinhadas entre os três.
-     width: 100% é necessário porque o body é flex (flex-direction: column) -
-     sem isso, a margin: auto engole o espaço todo em vez de esticar o
+     width: 100% é necessário porque o .pagina-wrapper (pai direto) é flex
+     (flex-direction: column) - sem isso, a margin: auto engole o espaço todo em vez de esticar o
      cabeçalho até o max-width (mesmo motivo explicado em .faixa-superior).
      box-sizing: border-box pelo mesmo motivo: mantém o padding somado
      DENTRO do max-width, pra bater exatamente com a largura do footer. */
@@ -236,7 +248,7 @@ ul {
 }
 
 .video-wrapper {
-  max-width: 800px;
+  max-width: 1300px;
   margin: 0 auto;
   /* mantém a proporção 16:9 do vídeo em qualquer largura de tela,
      evitando as barras pretas que apareciam com altura fixa em vh */
@@ -460,12 +472,13 @@ ul {
    RODAPÉ
    =============================== */
 
-/* layout "boxed": envolve os dois blocos do footer (busca + bloco existente)
-   na mesma largura máxima e centralização do header, pra ficar tudo alinhado.
+/* a própria tag <footer> já cobre os dois blocos internos (busca + bloco
+   escuro), então essa classe só cuida do layout "boxed": mesma largura
+   máxima e centralização do header, pra ficar tudo alinhado.
    width: 100% pelo mesmo motivo do .cabecalho e da .faixa-superior: o
-   footer também é filho direto do body (flex-direction: column), então
-   sem essa largura explícita a margin: auto engole o espaço todo. */
-.rodape-container {
+   footer também é filho direto do .pagina-wrapper (flex-direction: column),
+   então sem essa largura explícita a margin: auto engole o espaço todo. */
+.rodape {
   width: 100%;
   max-width: 1700px;
   margin: 0 auto;
@@ -476,7 +489,8 @@ ul {
   background-color: #0f1a5c;
   padding: 0.8rem 2rem;
   display: flex;
-  justify-content: center;
+  /* campo de busca mais próximo do canto esquerdo, em vez de centralizado */
+  justify-content: flex-start;
   align-items: center;
   gap: 0.6rem;
   color: #fff;
@@ -492,7 +506,8 @@ ul {
   max-width: 60vw;
 }
 
-.rodape {
+/* bloco escuro de baixo do rodapé: wordmark, ícones, links, copyright e logo */
+.rodape-principal {
   /* position: relative é o que permite a logo do canto (position: absolute)
      se posicionar em relação ao rodapé, e não à página inteira */
   position: relative;
