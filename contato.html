@@ -6,22 +6,17 @@
   <title>Ford Ranger - Contato</title>
   
   <link rel="stylesheet" href="anexo_desafio_htmlcss/css/reset.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="anexo_desafio_htmlcss/css/style.css">
   <link rel="icon" href="anexo_desafio_htmlcss/img/ford-96.png">
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-
-  <!-- Font Awesome via CDN, usado para os ícones de rede social no rodapé -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
 
-  <!-- Envolve a página inteira: dá a largura máxima boxed e a borda lateral
-       fina que liga o topo (faixa cinza) até a base (footer) -->
   <div class="pagina-wrapper">
 
-  <!-- Faixa cinza fina acima do header, só decorativa (inspirada no site oficial da Ford) -->
+  <!-- Faixa cinza fina acima do header -->
   <div class="faixa-superior">
     <a href="#" class="link-concessionarias">
       <i class="fa-solid fa-location-dot"></i> Concessionárias
@@ -40,18 +35,11 @@
   </header>
 
   <main>
+    <!-- Formulario -->
     <section class="secao-contato">
       <h1>Fale Conosco</h1>
       <p>Preencha o formulário abaixo e nossa equipe entrará em contato.</p>
-
-      <!-- layout em duas colunas: imagem do carro à esquerda, formulário à direita -->
       <div class="contato-colunas">
-        <!-- imagem "flutuando", sem moldura/sombra/fundo ao redor.
-             Não existe versão em PNG transparente do XLS em img/ (só o
-             mesmo .jpg com fundo de estúdio usado no card da Lançamento),
-             então o fundo da foto não sai só com CSS - removemos aqui
-             apenas a borda/sombra/card ao redor, deixando o mais "solto"
-             possível dentro do que dá pra fazer sem editar a imagem. -->
         <div class="contato-imagem-coluna">
           <img src="anexo_desafio_htmlcss/img/xls 2.2 diesel.jpg" alt="Ford Ranger XLS 2.2 Diesel 4X4 AT 2022" class="contato-imagem-carro">
         </div>
@@ -71,8 +59,6 @@
 
             <label for="tipo">Tipo de contato</label>
             <select id="tipo" name="tipo" required>
-              <!-- opção em branco: fica selecionada por padrão e some da lista
-                   de opções (hidden), então o campo começa vazio -->
               <option value="" disabled selected hidden></option>
               <option value="elogio">Elogio</option>
               <option value="reclamacao">Reclamação</option>
@@ -90,14 +76,12 @@
   </main>
 
   <footer class="rodape">
-    <!-- Bloco novo, decorativo, no topo do rodapé -->
     <div class="rodape-busca">
       <i class="fa-solid fa-magnifying-glass"></i>
       <input type="search" class="input-busca-rodape" placeholder="Pesquisar">
     </div>
 
     <div class="rodape-principal">
-      <!-- wordmark grande em texto (não é imagem), estilo inspirado no rodapé da Starbucks -->
       <p class="rodape-wordmark">FORD BRASIL</p>
 
       <!-- linha com os 5 ícones de redes sociais -->

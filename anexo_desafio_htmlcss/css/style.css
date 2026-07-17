@@ -1,0 +1,568 @@
+/* ===============================
+   ESTILOS GERAIS DO SITE FORD
+   Cores do projeto:
+   azul escuro: #1b357e
+   azul vibrante: #1351d8
+   =============================== */
+
+/* rodape */
+html, body {
+  height: 100%;
+}
+
+/* cor do fundo */
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  color: #222;
+  background-color: #F4F6FA;
+}
+
+/* parte da concessionárias + header + main + footer*/
+.pagina-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 1700px;
+  margin: 0 auto;
+  /* borda fina que vai ligar o header ao footer */
+  border-left: 1px solid #e0e0e0;
+  border-right: 1px solid #e0e0e0;
+}
+
+/* o main cresce para ocupar o espaço livre, empurrando o footer para baixo */
+main {
+  flex: 1;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+.faixa-superior {
+  background-color: #f2f2f2;
+  padding: 0.5rem 2rem;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  max-width: 1700px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.link-concessionarias {
+  color: #1b357e;
+  font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: color 0.3s ease;
+}
+
+.link-concessionarias:hover {
+  color: #1351d8;
+}
+
+.cabecalho {
+  background-color: #fff;
+  padding: 1rem 2rem;
+
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  border-bottom: 1px solid #e0e0e0; /* px, linha fina pra separar do resto da página */
+  width: 100%;
+  max-width: 1700px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.logo {
+  height: 60px;
+  justify-self: start;
+}
+
+.menu {
+  justify-self: center;
+}
+
+.menu ul {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.link-menu {
+  /* Texto do header */
+  color: #1b357e;
+  font-size: 1rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  display: inline-block; 
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.25s ease;
+}
+
+.link-menu:hover {
+  background-color: #1351d8;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+.link-menu:focus {
+  outline: 2px solid #1351d8;
+}
+
+/* Home */
+.destaque {
+  min-height: 70vh; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* container, do tamanho da imagem e texto que crescerem e ficam centralizados sempre em conjunto */
+.destaque-conteudo {
+  width: 85%;
+  max-width: 1700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.link-imagem-produto {
+  display: inline-block;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+/* contorno de foco customizado, só aparece navegando pelo teclado (Tab) */
+.link-imagem-produto:focus {
+  outline: 2px solid #1351d8;
+  outline-offset: 4px;
+}
+
+.imagem-produto {
+  /* ocupa 100% do container - .destaque-conteudo que controla a largura */
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+  outline: none;
+  border: none;
+  transition: transform 0.25s ease;
+}
+
+.link-imagem-produto:hover .imagem-produto {
+  transform: scale(1.05);
+}
+
+.texto-destaque {
+  font-size: 0.95rem;
+  max-width: 450px;
+}
+
+.link-aqui {
+  color: #1351d8;
+  font-weight: 600;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+/* pseudoclasse hover no link "aqui" */
+.link-aqui:hover {
+  color: #1b357e;
+}
+
+/* Sessão da pagina de lançamento */
+.secao-video {
+  padding: 2rem;
+  text-align: center;
+}
+
+.secao-video h1 {
+  color: #1b357e;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.secao-video p {
+  max-width: 700px;
+  margin: 1.5rem auto 0 auto;
+  line-height: 1.6;
+}
+
+.video-wrapper {
+  max-width: 1300px;
+  margin: 0 auto;
+  /* mantém a proporção 16:9 do vídeo em qualquer */
+  aspect-ratio: 16 / 9;
+}
+
+.video-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 8px;
+}
+
+.comparacao {
+  padding: 2rem;
+  text-align: center;
+}
+
+.comparacao h2 {
+  color: #1b357e;
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+}
+
+ /* Sessao dos cards dos carros */ 
+.cards-carros {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.5rem;
+}
+
+.card-carro {
+  background-color: #f2f4fa;
+  border: 1px solid #ccd6f0;
+  border-radius: 8px;
+  padding: 1.2rem;
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.card-imagem {
+  width: 100%;
+  max-width: 180px;
+  height: auto;
+  border-radius: 6px;
+  object-fit: cover;  /* Apaga o fundo branco das imagens */
+  mix-blend-mode: multiply;
+}
+
+/* Checkbox da esquerda */
+.card-linha {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  width: 100%;
+}
+
+/* Marcaçao do checkbox */
+.card-checkbox {
+  accent-color: #1351d8;
+  width: 22px;
+  height: 22px;
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.card-texto {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  text-align: left;
+  cursor: pointer;
+}
+
+.card-titulo {
+  font-weight: 600;
+  color: #1b357e;
+  font-size: 0.95rem;
+}
+
+.card-preco {
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.btn-comparar {
+  margin-top: 1.5rem;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  background-color: #1351d8;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-comparar:hover {
+  background-color: #1b357e;
+  transform: scale(1.05);
+}
+
+/* Sessão pagina de contato */
+.secao-contato {
+  padding: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.secao-contato h1 {
+  color: #1b357e;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.secao-contato > p {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Colunas da imagem do carro na esquerda, e o formulario na direita */
+.contato-colunas {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+}
+
+.contato-imagem-coluna {
+  flex: 1.2;
+}
+
+/* Apagar o fundo branco do carro */
+.contato-imagem-carro {
+  width: 100%;
+  display: block;
+  mix-blend-mode: multiply;
+}
+
+.contato-form-coluna {
+  flex: 1;
+  margin-top: 2rem;
+}
+
+/* "Sobre Voce" */
+.contato-form-coluna h2 {
+  color: #1b357e;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.formulario-contato {
+  display: flex;
+  flex-direction: column;
+}
+
+.formulario-contato label {
+  margin-top: 1rem;
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+  color: #1b357e;
+}
+
+.formulario-contato input,
+.formulario-contato select,
+.formulario-contato textarea {
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 10px; 
+  font-family: inherit;
+  font-size: 1rem;
+  background-color: #fff;
+}
+
+/* Formulário */
+.formulario-contato input:focus,
+.formulario-contato select:focus,
+.formulario-contato textarea:focus {
+  outline: none;
+  border-color: #1351d8;
+}
+
+.btn-enviar {
+  margin-top: 1.5rem;
+  padding: 0.8rem 3rem;
+  font-size: 1rem;
+  background-color: #1351d8;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  align-self: flex-end;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-enviar:hover {
+  background-color: #1b357e;
+  transform: scale(1.1);
+}
+
+/* Sessão do rodapé */
+.rodape {
+  width: 100%;
+  max-width: 1700px;
+  margin: 0 auto;
+}
+
+/* Campo de busca */
+.rodape-busca {
+  background-color: #0f1a5c;
+  padding: 0.8rem 2rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.6rem;
+  color: #fff;
+}
+
+.input-busca-rodape {
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 20px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  width: 220px;
+  max-width: 60vw;
+}
+
+/* Parte escura de baixo do rodapé */
+.rodape-principal {
+  position: relative;
+  background-color: #0a0e23;
+  color: #fff;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  text-align: center;
+}
+
+/* Parte do "FORD BRASIL" */
+.rodape-wordmark {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+}
+
+.redes-sociais {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+}
+
+.link-social {
+  color: #fff;
+  font-size: 1.6rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.link-social:hover {
+  transform: scale(1.15);
+  color: #cfe0ff;
+}
+
+/* Link da politica de privacidade */
+.rodape-links {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.link-rodape {
+  color: #fff;
+  text-decoration: underline;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.link-rodape:hover {
+  color: #cfe0ff;
+}
+
+.rodape-copyright {
+  font-size: 0.85rem;
+  opacity: 0.85;
+}
+
+.rodape-logo-canto {
+  position: absolute;
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.logo-rodape {
+  height: 60px;
+  width: auto;
+  display: block;
+}
+
+/* Sessão da responsividade (celular, tablet e notebook) */
+
+/* Telas pequenas */
+@media (min-width: 249px) and (max-width: 480px) {
+  .cabecalho {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 1rem;
+  }
+
+  .logo,
+  .menu {
+    justify-self: center;
+  }
+
+  .destaque-conteudo {
+    width: 92%;
+  }
+
+  .rodape-wordmark {
+    font-size: 1.8rem;
+  }
+
+  .rodape-logo-canto {
+    position: static;
+    margin-top: 0.5rem;
+  }
+
+  .cards-carros {
+    gap: 1.5rem;
+  }
+
+  .card-carro {
+    width: 92%;
+    max-width: 320px;
+  }
+
+  .contato-colunas {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
+
+/* Telas medias */
+@media (min-width: 481px) and (max-width: 1024px) {
+  .destaque-conteudo {
+    width: 90%;
+  }
+
+  .cards-carros {
+    gap: 1.5rem;
+  }
+
+  .contato-colunas {
+    gap: 1.5rem;
+  }
+}
