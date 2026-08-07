@@ -1,10 +1,3 @@
-/* ===============================
-   ESTILOS GERAIS DO SITE FORD
-   Cores do projeto:
-   azul escuro: #1b357e
-   azul vibrante: #1351d8
-   =============================== */
-
 /* rodape */
 html, body {
   height: 100%;
@@ -135,6 +128,31 @@ ul {
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
+}
+
+#carousel {
+  width: 100%;
+  height: 46vh;
+  max-height: 628px;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+}
+
+#carousel-title {
+  display: block;
+  text-align: center;
+  margin-top: 0.5rem;
+  font-weight: bold;
+}
+
+#carousel-title a {
+  color: #1351d8;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+#carousel-title a:hover {
+  color:#1b357e;
 }
 
 .link-imagem-produto {
