@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="anexo_desafio_htmlcss/css/reset.css">
   <link rel="stylesheet" href="anexo_desafio_htmlcss/css/style.css">
+  <script src="anexo_desafio_htmlcss/js/carousel.js"></script>
   <link rel="icon" href="anexo_desafio_htmlcss/img/ford-96.png">
   <title>Ford Ranger - Home</title>
 
@@ -15,17 +16,17 @@
 </head>
 <body>
 
-  <!-- Linha cinza que liga o headar ao footer -->
+  <!-- linha cinza que liga o headar ao footer -->
   <div class="pagina-wrapper">
 
-  <!-- Faixa cinza fina acima do header, só decorativa (inspirada no site oficial da Ford) -->
+  <!-- faixa cinza fina acima do header, só decorativa (inspirada no site oficial da Ford) -->
   <div class="faixa-superior">
     <a href="#" class="link-concessionarias">
       <i class="fa-solid fa-location-dot"></i> Concessionárias
     </a>
   </div>
 
-  <!-- Parte do cabecalho  -->
+  <!-- parte do cabecalho  -->
   <header class="cabecalho">
     <img src="anexo_desafio_htmlcss/img/logo-ford-256.png" alt="Logomarca Ford" class="logo">
     <nav class="menu">
@@ -38,21 +39,16 @@
   </header>
 
   <main>
-    <!-- Sessao da imagem da Ford -->
+    <!-- sessao da imagem da Ford -->
     <section class="destaque">
       <div class="destaque-conteudo">
-      <a href="lancamento.html" class="link-imagem-produto">
-        <img src="anexo_desafio_htmlcss/img/imagem_1.jpg" alt="Ford Ranger, o novo lançamento" class="imagem-produto">
-      </a>
-      <p class="texto-destaque">
-        Está é a nova Ranger Ford 2022. Verifique novidades
-        <a href="lancamento.html" class="link-aqui">aqui</a>
-      </p>
+        <div id="carousel"></div>
+        <div id="carousel-title"></div>
       </div>
     </section>
   </main>
 
-  <!-- Parte do rodape -->
+  <!-- parte do rodape -->
   <footer class="rodape">
     <div class="rodape-busca">
       <i class="fa-solid fa-magnifying-glass"></i>
@@ -90,8 +86,14 @@
       </div>
     </div>
   </footer>
-
   </div>
+  <script>
+    carouselArr.push(new Carousel("imagem_1.jpg", "Essa é a nova Ranger Ford 2022. Verifique novidades.", "lancamento.html"));
+    carouselArr.push(new Carousel("imagem_2.jpg", "Ford, a nossa história", "#"));
+    carouselArr.push(new Carousel("imagem_3.jpg", "Nova Ford Bronco Sport 2022", "lancamento.html"));
+
+    Carousel.Start(carouselArr);
+  </script>
 
 </body>
 </html>
