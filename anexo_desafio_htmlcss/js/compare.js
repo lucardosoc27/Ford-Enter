@@ -56,6 +56,7 @@
   function HideCompare() {
     document.getElementById("compare").style.display = "none";
   }
+
   function UpdateCompareTable() {
       carArr.forEach(function(carro, index){
           document.getElementById(`compare_image_${index}`).innerHTML = `<img src="${carro.image}" width="80">`;
@@ -68,6 +69,6 @@
           document.getElementById(`compare_potencia_${index}`).innerHTML = carro.potencia;
           document.getElementById(`compare_volumecacamba_${index}`).innerHTML = carro.volumeCacamba;
           document.getElementById(`compare_roda_${index}`).innerHTML = carro.roda;
-          document.getElementById(`compare_preco_${index}`).innerHTML = `R$ ${carro.preco.toLocaleString('pt-BR')}`;
+          document.getElementById(`compare_preco_${index}`).innerHTML = `R$ ${carro.preco.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
       });
   }

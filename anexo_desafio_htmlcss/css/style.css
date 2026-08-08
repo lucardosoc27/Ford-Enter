@@ -326,7 +326,49 @@ ul {
   transform: scale(1.05);
 }
 
-/* Sessão pagina de contato */
+#compare {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+.popup-conteudo {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 2rem;
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3) ;
+}
+
+.tabela-comparacao {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.tabela-comparacao td {
+  padding: 0.6rem 1rem;
+  border-bottom: 1px solid #e0e0e0;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.tabela-comparacao td:first-child {
+  text-align: left;
+  font-weight: 600;
+  color: #1b357e;
+}
+
+.popup-botao {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+/* sessão pagina de contato */
 .secao-contato {
   padding: 2rem;
   max-width: 1000px;

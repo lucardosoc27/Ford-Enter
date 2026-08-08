@@ -7,22 +7,21 @@
 
   <link rel="stylesheet" href="anexo_desafio_htmlcss/css/reset.css">
   <link rel="stylesheet" href="anexo_desafio_htmlcss/css/style.css">
+  <script src="anexo_desafio_htmlcss/js/compare.js"></script>
   <link rel="icon" href="anexo_desafio_htmlcss/img/ford-96.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
 
   <div class="pagina-wrapper">
 
-  <!-- Linha cinza -->
+  <!-- linha cinza -->
   <div class="faixa-superior">
     <a href="#" class="link-concessionarias">
-      <i class="fa-solid fa-location-dot"></i> Concessionárias
-    </a>
+      <i class="fa-solid fa-location-dot"></i>Concessionárias</a>
   </div>
 
   <header class="cabecalho">
@@ -37,7 +36,7 @@
   </header>
 
   <main>
-    <!-- Parte do video -->
+    <!-- parte do video -->
     <section class="secao-video">
       <h1>Assista ao vídeo de lançamento</h1>
       <div class="video-wrapper">
@@ -56,14 +55,15 @@
       </p>
     </section>
 
-    <!-- Comparação dos modelos dos cards de cada carro -->
+    <!-- comparação dos modelos dos cards de cada carro -->
     <section class="comparacao">
       <h2>Compare os modelos</h2>
       <div class="cards-carros">
         <article class="card-carro">
           <img src="anexo_desafio_htmlcss/img/XL Cabine.jpg" alt="Ford Ranger XL Cabine Simples" class="card-imagem">
           <div class="card-linha">
-            <input type="checkbox" name="modelo" id="modelo1" class="card-checkbox">
+            <input type="checkbox" name="modelo" id="modelo1" class="card-checkbox"
+            onchange="SetCarToCompare(this, new Car('XL Cabine Simples 2.2 Diesel 4X4 MT 2022', 183850, 511, 1821, 232, 1234, 2.2, 160, 1420, 'Aço Estampado 16', 'anexo_desafio_htmlcss/img/XL Cabine.jpg'))">
             <label for="modelo1" class="card-texto">
               <span class="card-titulo">XL Cabine Simples 2.2 Diesel 4X4 MT 2022</span>
               <span class="card-preco">Preço Sugerido: R$ 183.850</span>
@@ -74,7 +74,8 @@
         <article class="card-carro">
           <img src="anexo_desafio_htmlcss/img/xls 2.2 diesel.jpg" alt="Ford Ranger XLS 2.2 Diesel" class="card-imagem">
           <div class="card-linha">
-            <input type="checkbox" name="modelo" id="modelo2" class="card-checkbox">
+            <input type="checkbox" name="modelo" id="modelo2" class="card-checkbox"
+            onchange="SetCarToCompare(this, new Car('XLS 2.2 Diesel 4X4 AT 2022', 220690, 511, 1821, 232, 1076, 2.2, 160, 1180, 'Aço Estampado 16', 'anexo_desafio_htmlcss/img/xls 2.2 diesel.jpg'))">
             <label for="modelo2" class="card-texto">
               <span class="card-titulo">XLS 2.2 Diesel 4X4 AT 2022</span>
               <span class="card-preco">Preço Sugerido: R$ 220.690</span>
@@ -85,7 +86,8 @@
         <article class="card-carro">
           <img src="anexo_desafio_htmlcss/img/storm.jpg" alt="Ford Ranger Storm 3.2 Diesel" class="card-imagem">
           <div class="card-linha">
-            <input type="checkbox" name="modelo" id="modelo3" class="card-checkbox">
+            <input type="checkbox" name="modelo" id="modelo3" class="card-checkbox"
+            onchange="SetCarToCompare(this, new Car('Storm 3.2 Diesel 4X4 AT 2022', 222790, 511, 1821, 232, 1040, 3.2, 200, 1180, 'Liga Leve 17', 'anexo_desafio_htmlcss/img/storm.jpg'))">
             <label for="modelo3" class="card-texto">
               <span class="card-titulo">Storm 3.2 Diesel 4X4 AT 2022</span>
               <span class="card-preco">Preço Sugerido: R$ 222.790</span>
@@ -93,7 +95,8 @@
           </div>
         </article>
       </div>
-      <button type="button" class="btn-comparar">Comparar Carros</button>
+
+      <button type="button" class="btn-comparar" onclick="ShowCompare()">Comparar Carros</button>
     </section>
   </main>
 
@@ -102,11 +105,10 @@
       <i class="fa-solid fa-magnifying-glass"></i>
       <input type="search" class="input-busca-rodape" placeholder="Pesquisar">
     </div>
-
     <div class="rodape-principal">
       <p class="rodape-wordmark">FORD BRASIL</p>
 
-      <!-- Links das redes sociais -->
+      <!-- links das redes sociais -->
       <ul class="redes-sociais">
         <li><a href="https://www.facebook.com/FordBrasil/?locale=pt_BR" target="_blank" rel="noopener noreferrer" class="link-social" aria-label="Facebook">
           <i class="fa-brands fa-facebook"></i>
@@ -130,16 +132,82 @@
         <a href="#" class="link-rodape">Política de Privacidade</a>
         <a href="#" class="link-rodape">Direitos do Titular</a>
       </div>
-
       <p class="rodape-copyright">Copyright &copy; 2026 Ford Motor Company - Todos os direitos reservados.</p>
 
-      <!-- Logo da ford -->
+      <!-- logo da ford -->
       <div class="rodape-logo-canto">
         <img src="anexo_desafio_htmlcss/img/ford-96.png" alt="Logomarca Ford" class="logo-rodape">
       </div>
     </div>
   </footer>
+  </div>
 
+  <!--popup da comparaçao dos veiculos-->
+  <div id="compare">
+    <div class="popup-conteudo">
+      <table class="tabela-comparacao">
+        <tbody>
+          <tr>
+            <td></td>
+            <td id="compare_image_0"></td>
+            <td id="compare_image_1"></td>
+          </tr>
+          <tr>
+            <td>Modelo</td>
+            <td id="compare_modelo_0"></td>
+            <td id="compare_modelo_1"></td>
+          </tr>
+          <tr>
+            <td>Altura da caçamba (mm)</td>
+            <td id="compare_alturacacamba_0"></td>
+            <td id="compare_alturacacamba_1"></td>
+          </tr>
+          <tr>
+            <td>Altura do veículo (mm)</td>
+            <td id="compare_alturaveiculo_0"></td>
+            <td id="compare_alturaveiculo_1"></td>
+          </tr>
+          <tr>
+            <td>Altura livre do solo (mm)</td>
+            <td id="compare_alturasolo_0"></td>
+            <td id="compare_alturasolo_1"></td>
+          </tr>
+          <tr>
+            <td>Capacidade da carga (kg)</td>
+            <td id="compare_capacidadecarga_0"></td>
+            <td id="compare_capacidadecarga_1"></td>
+          </tr>
+          <tr>
+            <td>Motor</td>
+            <td id="compare_motor_0"></td>
+            <td id="compare_motor_1"></td>
+          </tr>
+          <tr>
+            <td>Potência (cv)</td>
+            <td id="compare_potencia_0"></td>
+            <td id="compare_potencia_1"></td>
+          </tr>
+          <tr>
+            <td>Volume de caçamba (L)</td>
+            <td id="compare_volumecacamba_0"></td>
+            <td id="compare_volumecacamba_1"></td>
+          </tr>
+          <tr>
+            <td>Roda</td>
+            <td id="compare_roda_0"></td>
+            <td id="compare_roda_1"></td>
+          </tr>
+          <tr>
+            <td>Preço</td>
+            <td id="compare_preco_0"></td>
+            <td id="compare_preco_1"></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="popup-botao">
+        <button type="button" class="btn-comparar" onclick="HideCompare()">Fechar</button>
+      </div>
+    </div>
   </div>
 
 </body>
