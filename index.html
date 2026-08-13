@@ -42,7 +42,11 @@
     <!-- sessao da imagem da Ford -->
     <section class="destaque">
       <div class="destaque-conteudo">
-        <div id="carousel"></div>
+        <div class="carousel-wrapper">
+          <button type="button" class="carousel-seta carousel-seta-esquerda" onclick="Carousel.Previous()" aria-label="Slide anterior">&#10094;</button>
+          <div id="carousel"></div>
+          <button type="button" class="carousel-seta carousel-seta-direita" onclick="Carousel.Next()" aria-label="Próximo slide">&#10095;</button>
+        </div>
         <div id="carousel-title"></div>
       </div>
     </section>

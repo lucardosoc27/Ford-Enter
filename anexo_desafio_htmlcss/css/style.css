@@ -162,14 +162,48 @@ ul {
   text-decoration: none;
 }
 
-/* contorno de foco customizado, só aparece navegando pelo teclado (Tab) */
+.carousel-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.carousel-seta {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%); /* Move um elemento verticalmente sem afetar sua posicao horizontal */
+  background-color: rgba(255, 255, 255, 0.5);
+  color: #1b357e;
+  border: none;
+  width: 44px;
+  height: 44px; /* forma um círculo com o border-radius */
+  border-radius: 50%; /* transformando o quadrado em volta do circulo, para um circulo  */
+  font-size: 1.3rem; /* tamanho do símbolo ❮/❯ dos botoes */
+  cursor: pointer; /* muda o cursor do mouse pra maozinha quando passar por cima */
+  z-index: 10; /* controla qual elemento fica por cima de qual, quando eles se sobrepoem - Botao fica por cima da img*/
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.carousel-seta:hover {
+  background-color: #fff;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-seta-esquerda {
+  left: 1rem; /* cola o botao a 1rem da borda esquerda do carrossel */
+}
+
+.carousel-seta-direita {
+  right: 1rem; /* cola o botao a 1rem da borda direita do carrossel */
+}
+
+/* contorno de foco customizado */
 .link-imagem-produto:focus {
   outline: 2px solid #1351d8;
   outline-offset: 4px;
 }
 
 .imagem-produto {
-  /* ocupa 100% do container - .destaque-conteudo que controla a largura */
+  /* ocupa 100% do container */
   width: 100%;
   height: auto;
   border-radius: 8px;
