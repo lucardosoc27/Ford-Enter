@@ -603,6 +603,37 @@ ul {
   display: block;
 }
 
+.lgpd-aviso {
+  font-size: 0.85rem;
+  color: #52606d;
+  margin-top: 1rem;
+  line-height: 1.2;
+}
+
+.lgpd-checkbox-linha {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-top: 0.7rem;
+  font-size: 0.85rem;
+}
+
+.lgpd-checkbox-linha input[type="checkbox"] {
+  margin-top: 1rem;
+  accent-color:#1351d8;
+  cursor: pointer;
+}
+
+.link-termos {
+  color: #1351d8;
+  text-decoration: underline;
+}
+
+.btn-enviar:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
 /* Sessão da responsividade (celular, tablet e notebook) */
 
 /* Telas pequenas */

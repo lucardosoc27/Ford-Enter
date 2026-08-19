@@ -17,7 +17,7 @@
 
   <div class="pagina-wrapper">
 
-  <!-- Faixa cinza fina acima do header -->
+  <!-- faixa cinza fina acima do header -->
   <div class="faixa-superior">
     <a href="#" class="link-concessionarias">
       <i class="fa-solid fa-location-dot"></i> Concessionárias
@@ -36,7 +36,7 @@
   </header>
 
   <main>
-    <!-- Formulario -->
+    <!-- formulario -->
     <section class="secao-contato">
       <h1>Fale Conosco</h1>
       <p>Preencha o formulário abaixo e nossa equipe entrará em contato.</p>
@@ -74,8 +74,20 @@
 
             <label for="mensagem">Mensagem</label>
             <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem"></textarea>
+            <p class="lgpd-aviso">Os dados serão mantidos em nossa base de dados, só enquanto for desejado por você. A qualquer momento, será possível editar ou remover tais dados.
+            </p>
 
-            <button type="submit" class="btn-enviar">Enviar</button>
+            <div class="lgpd-checkbox-linha">
+              <input type="checkbox" id="aceite-termos" name="aceite-termos" onchange="VerificarConsentimento()">
+              <label for="aceite-termos">Sim. Li e concordo com os <a href="https://www.ford.com.br/politica-de-privacidade/" target="_blank" rel="noopener noreferrer" class="link-termos">Termos e condições</a>.</label>
+            </div>
+
+            <div class="lgpd-checkbox-linha">
+              <input type="checkbox" id="aceite-novidades" name="aceite-novidades">
+              <label for="aceite-novidades">Sim. Também quero receber descontos e novidades.</label>
+            </div>
+
+            <button type="submit" class="btn-enviar" id="btn-enviar" disabled>Enviar</button>
           </form>
         </div>
       </div>

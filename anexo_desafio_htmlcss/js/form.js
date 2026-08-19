@@ -39,6 +39,12 @@ function Post(form) {
   Enviar();
 }
 
+function VerificarConsentimento() {
+  let aceiteTermos = document.getElementById("aceite-termos");
+  let botaoEnviar = document.getElementById("btn-enviar");
+  botaoEnviar.disabled = !aceiteTermos.checked;
+}
+
 function Enviar() {
   let nome = document.getElementById("nome");
   if (nome.value != "") {
